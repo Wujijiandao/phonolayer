@@ -1,0 +1,709 @@
+{
+  "format": "phonolayer-release-manifest-sha256",
+  "appVersion": "0.9.7",
+  "releaseChannel": "public-beta-github-release-prep",
+  "generatedAt": "2026-09-26T07:06:11Z",
+  "file_count": 140,
+  "files": [
+    {
+      "path": "AUTHORS.md",
+      "sha256": "87984ae3026367fe6b9ba670c8f952149e5c929adfe0a3b7a47eac2a62c832c5",
+      "size_bytes": 328
+    },
+    {
+      "path": "BACKUP_ELECTRON_RELEASE.bat",
+      "sha256": "f4b87b016674b15db817b7ca85bb652b2bb48c0f7ec4c7a86f73f8aef60455f3",
+      "size_bytes": 344
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "ef21649a69f6b5ea951e31cb2d41c76d663607240cf8043c86ad489026553881",
+      "size_bytes": 5213
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "e084130e49feece9a50c831750b373e5cb3236832de0257cfeb7ee655d69310b",
+      "size_bytes": 427
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "cdbe18aefd61bd0505d24c196b538c0f8dc753d194c9052475a526d5a0d6b2f0",
+      "size_bytes": 1059
+    },
+    {
+      "path": "INSTALL_RUNTIME.bat",
+      "sha256": "41a7a602bbe7e80da14cc622869ff59fe71bd35221c383c4d2bf5a6f93679ab4",
+      "size_bytes": 434
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "size_bytes": 16726
+    },
+    {
+      "path": "OPEN_DEMO_SAMPLE.bat",
+      "sha256": "a1189c39d701d405432713bb22fc833a50ff1d749b1895d478c81276228de9c0",
+      "size_bytes": 363
+    },
+    {
+      "path": "PRIVACY.md",
+      "sha256": "534fe5577f9f18a2e5f4f558e98acfe438ec6d6036507eb75ec6f6e133a44885",
+      "size_bytes": 865
+    },
+    {
+      "path": "QA_REPORT.md",
+      "sha256": "edde4f0d71925608483a90c3f82ac3791ed1e17840a5eea0cbcc939c719fa755",
+      "size_bytes": 1352
+    },
+    {
+      "path": "README.md",
+      "sha256": "2a00e8e094ecb49689e553e7ed1afbf6d864c6a5bfe3ccccdabbe51ed157032d",
+      "size_bytes": 6654
+    },
+    {
+      "path": "README_WINDOWS.txt",
+      "sha256": "7d50363af040c623a50b96228ef773e3ee07a82915bbc6f2a33b5a6b120c7f79",
+      "size_bytes": 1070
+    },
+    {
+      "path": "REGISTER_PHONODOC.bat",
+      "sha256": "688898cdc54bf2a7f1c8f79cdcb2c1515c4a22d918383ab578205736d3ec6c51",
+      "size_bytes": 807
+    },
+    {
+      "path": "RUN_DESKTOP.bat",
+      "sha256": "6d608049ed457a8163a5904a0182202141f06bc8fa56cb0dae1b6a38c5c60abb",
+      "size_bytes": 338
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "d993aa788f7c22413c70a1fdcc7688fa92aa57e02a848f923599975faf11d352",
+      "size_bytes": 578
+    },
+    {
+      "path": "SETUP_PHONOLAYER.bat",
+      "sha256": "978cae21722e9b8f7ff5d6e1f833d5b1904ae8deb8b9353251c3593a21a91387",
+      "size_bytes": 160
+    },
+    {
+      "path": "SUPPORT.md",
+      "sha256": "922d056160fb0bf70b12f6801c496422d8a3af1f73d667b3719c9e179a6205c1",
+      "size_bytes": 624
+    },
+    {
+      "path": "TRADEMARKS.md",
+      "sha256": "1b8051dd2a1216fd81a8ba1404c93bee3b415827af88a74365ceeec39267b87c",
+      "size_bytes": 632
+    },
+    {
+      "path": "app/archive-core.js",
+      "sha256": "f2a80f09e25b6992b6ffd25eae2b21d5a159d6e117bec02537176e1a342acf3d",
+      "size_bytes": 8595
+    },
+    {
+      "path": "app/assets/phonodoc-icon.svg",
+      "sha256": "4370dac44ffe147dd7f71e0913f9ae69781573bc1286414bfc152bdb0ea39e05",
+      "size_bytes": 1062
+    },
+    {
+      "path": "app/assets/phonodoc.ico",
+      "sha256": "26e0bc6318c69c81aafff1e19639a812e474f07fc494abc7d8e96fdf9216f9ea",
+      "size_bytes": 24452
+    },
+    {
+      "path": "app/assets/phonodoc.png",
+      "sha256": "a5cecf650fa5d81c6de74b0426befae723bd2f0a94ee48f8c104ffb4138a747c",
+      "size_bytes": 9212
+    },
+    {
+      "path": "app/assets/phonolayer-app.ico",
+      "sha256": "3f6a1ba73abcfa6697308376f4b0b0df9fcd0a8e682cb31dba430bb8c8a20794",
+      "size_bytes": 77481
+    },
+    {
+      "path": "app/assets/phonolayer-app.png",
+      "sha256": "9c9cb5966ea613cf73812920d82eb7aa5e6d714b3f5390f2a58fb333fa916619",
+      "size_bytes": 132362
+    },
+    {
+      "path": "app/assets/phonolayer-mark.svg",
+      "sha256": "5370995f61d4d6b69e013b32bda288dad585d94ed1156fe5353cca0476e22202",
+      "size_bytes": 354282
+    },
+    {
+      "path": "app/assets/shengjian-app.ico",
+      "sha256": "3f6a1ba73abcfa6697308376f4b0b0df9fcd0a8e682cb31dba430bb8c8a20794",
+      "size_bytes": 77481
+    },
+    {
+      "path": "app/assets/shengjian-app.png",
+      "sha256": "9c9cb5966ea613cf73812920d82eb7aa5e6d714b3f5390f2a58fb333fa916619",
+      "size_bytes": 132362
+    },
+    {
+      "path": "app/confirmation-core.js",
+      "sha256": "c6adc22d9f654b4e1f77136df8f1baaf6aa38707a32e9aacc4edd898eea44d0b",
+      "size_bytes": 988
+    },
+    {
+      "path": "app/font-core.js",
+      "sha256": "e4edd4bee53498db09ab432066ba1d123d1be8e64bf80ba433504bfe4bb0904b",
+      "size_bytes": 4977
+    },
+    {
+      "path": "app/i18n.js",
+      "sha256": "299ad0e9bc17ff1b52528dbb9d3b4812141df2eac54138d280f4258c8d792f00",
+      "size_bytes": 61143
+    },
+    {
+      "path": "app/identity-core.js",
+      "sha256": "c5633d3e1f58ec1e24c12ff3979fdbf74d6f55d33a2ddd306ca212e2b94f3e34",
+      "size_bytes": 1391
+    },
+    {
+      "path": "app/index.html",
+      "sha256": "ffb25131218875186bf60714a692d37f5022d2e0499a521da1fbb8d5ef0dbc93",
+      "size_bytes": 36495
+    },
+    {
+      "path": "app/japanese-pitch-core.js",
+      "sha256": "3f84895330deb6594c779a15874f1bdccd4157dc98ab035ba807214dc1323fc1",
+      "size_bytes": 6304
+    },
+    {
+      "path": "app/learning-db-core.js",
+      "sha256": "1b703240b8ac06f62fde671f9e9a257f40e005b9953069640906246f31f32c52",
+      "size_bytes": 5834
+    },
+    {
+      "path": "app/learning-db.js",
+      "sha256": "6cb3b028a61de0692b5650e8fb27041f39f1a73d90a6273327ea72ad70c26706",
+      "size_bytes": 11534
+    },
+    {
+      "path": "app/main.js",
+      "sha256": "c33d420628fa7c9afe272eb7158eff8c70bee5e5d9271a981ab624553eb8b504",
+      "size_bytes": 25031
+    },
+    {
+      "path": "app/memory-core.js",
+      "sha256": "c130a4af7f016e3968e73976236d3d53ac9c116ef28c8267f6f84f8487e9d79a",
+      "size_bytes": 6676
+    },
+    {
+      "path": "app/package.json",
+      "sha256": "428e157e900844843cf39e43292a80d171845bbeca58c8f76bf9593d84047584",
+      "size_bytes": 298
+    },
+    {
+      "path": "app/phonetics-core.js",
+      "sha256": "0e1cd648c63205f2caaa964fed2327ab560e000d81d4f9f5c7f47ee249ac19ba",
+      "size_bytes": 2546
+    },
+    {
+      "path": "app/preload.js",
+      "sha256": "55db91183a1894fd2f64cec0ef31cbe373ade341ec01e48af82f553c61291153",
+      "size_bytes": 1975
+    },
+    {
+      "path": "app/renderer.js",
+      "sha256": "0cc255fd40064a9987870bc2d1755347f099391de51ed57c17dd44f45d99308a",
+      "size_bytes": 182422
+    },
+    {
+      "path": "app/retrieval-core.js",
+      "sha256": "20ee610d90010e4e46b03d778888f6a46d70abab91cfbb8c43f4f7a4cbd9ec2d",
+      "size_bytes": 4858
+    },
+    {
+      "path": "app/styles.css",
+      "sha256": "aeadf30702358c0f8bbea41bad2ecdc722c2715a538fd70b7eb2eed4cbf9823c",
+      "size_bytes": 37953
+    },
+    {
+      "path": "docs/AI_ASSISTED_DEVELOPMENT.md",
+      "sha256": "4edcba1345e2c56608197a0ad1f92abace5def472c32486a4c2938b7c452b30e",
+      "size_bytes": 638
+    },
+    {
+      "path": "docs/ARCHITECTURE_0.6.md",
+      "sha256": "81e6cc7b54e27b7609c73075af888f03510981b929e70aff81d1c0055cd78911",
+      "size_bytes": 1798
+    },
+    {
+      "path": "docs/ARCHITECTURE_OVERVIEW_0.8.1.md",
+      "sha256": "6941293d5ea112ec614c29aeba1746921b6954a8d566f6be117264c5c18d91ed",
+      "size_bytes": 6273
+    },
+    {
+      "path": "docs/ARCHITECTURE_OVERVIEW_0.9.2.md",
+      "sha256": "836ab096332101efe3775716a62f80fa0bcb37dcd0f11aa67243cd4311e81eb3",
+      "size_bytes": 1366
+    },
+    {
+      "path": "docs/ARCHITECTURE_OVERVIEW_0.9.3.md",
+      "sha256": "278e107c248163e20129f01f2ea4e5bd2814f8be1cece756f7a4f304cb62bb0a",
+      "size_bytes": 1080
+    },
+    {
+      "path": "docs/ARCHITECTURE_OVERVIEW_0.9.4.md",
+      "sha256": "bf26983c45360e061d299d3c2d9d67ec27fe249ade2744e32195eb74a6de919b",
+      "size_bytes": 701
+    },
+    {
+      "path": "docs/BRANDING_AND_COMPATIBILITY_0.9.2.md",
+      "sha256": "54b4290e64698f1a694f81ef4955dae17cb1787f1377071d42899148cba3c004",
+      "size_bytes": 1155
+    },
+    {
+      "path": "docs/BRAND_ASSETS_0.9.6.md",
+      "sha256": "ae0607929e9abae35ca720099359b092bf1f5001ea60c59ca29278e542d4c78a",
+      "size_bytes": 851
+    },
+    {
+      "path": "docs/BRAND_ASSETS_0.9.7.md",
+      "sha256": "ae0607929e9abae35ca720099359b092bf1f5001ea60c59ca29278e542d4c78a",
+      "size_bytes": 851
+    },
+    {
+      "path": "docs/DEPENDENCY_AND_SUPPLY_CHAIN_0.9.3.md",
+      "sha256": "e06bbcbf2462c91f118b50cc5cfdfe16be01fe05350bd7431ed1c668eb2c3a3e",
+      "size_bytes": 3126
+    },
+    {
+      "path": "docs/DESIGN_PHILOSOPHY.md",
+      "sha256": "008ba7a189fe14a0c10d5501a1febe2aa0126f74eac84dec03a703558a543191",
+      "size_bytes": 4564
+    },
+    {
+      "path": "docs/DEVELOPMENT_POLICY.md",
+      "sha256": "92139c98fd6e1a8a9a7dc006a08e6bb5e6e311ac01c48d499b45034a63ddf4e7",
+      "size_bytes": 1016
+    },
+    {
+      "path": "docs/DIRECT_ANNOTATION_EDITING_0.8.6.md",
+      "sha256": "7964bd34cc3a97f2b60128441f9a8978aa87b681974bd3f355d950e7abe0c1a0",
+      "size_bytes": 3453
+    },
+    {
+      "path": "docs/EDITING_ESSENTIALS_0.6.6.md",
+      "sha256": "c042e0a809cc5cad9aef404df7ade5f7910023fcb848eec57aad8a034ac82489",
+      "size_bytes": 1251
+    },
+    {
+      "path": "docs/EDITING_RELIABILITY_0.7.2.md",
+      "sha256": "900538d204eb56a08cd3329383dc99f13992a4ae1523d21fa26eb33e05e965f2",
+      "size_bytes": 4565
+    },
+    {
+      "path": "docs/ENGINEERING_GUIDE.md",
+      "sha256": "d2de1e214059a935ba68b529991c4974138ee686b7ff4c79af505e98a2c5494a",
+      "size_bytes": 5384
+    },
+    {
+      "path": "docs/EXPERIMENTAL_FORMAT_0.7.md",
+      "sha256": "6f7d37b491213edd259e2967ff7fabe30c111d9821fac5058878e3b897ba2a8c",
+      "size_bytes": 3718
+    },
+    {
+      "path": "docs/EXPERIMENTAL_FORMAT_0.8.md",
+      "sha256": "2b89c64ce6c30853673163c0d210b9614e96fe89dfc88270a2b5851ee52bb767",
+      "size_bytes": 1047
+    },
+    {
+      "path": "docs/FORMAT_FREEZE_CANDIDATE_0.9.0.md",
+      "sha256": "f19b1e3c28e28774a6610f1be243e47ae5f7e5382f73ed5d38f8ff5b0a87e78a",
+      "size_bytes": 1574
+    },
+    {
+      "path": "docs/GITHUB_RELEASE_NOTE_v0.9.7.md",
+      "sha256": "8262b147880b7c21838acb59f65f4dd0471cc051124f1e6d069dc5c412f54ce0",
+      "size_bytes": 1307
+    },
+    {
+      "path": "docs/HIGH_ZOOM_GEOMETRY_0.8.7.md",
+      "sha256": "845259c69ed590fdd0c5d8256ed52c1b371f0b9815b3a3fd6e65b37427683219",
+      "size_bytes": 1436
+    },
+    {
+      "path": "docs/ICON_SYSTEM_0.7.1.md",
+      "sha256": "cb22cf05574aef023d740a86bcb7d9411209c287c9d6fdb3205c42aff951ab32",
+      "size_bytes": 624
+    },
+    {
+      "path": "docs/INTERACTION_MODEL_0.7.1.md",
+      "sha256": "b5a3fc1c9c8ce160e46aa44e7a3d45bbb484277d77bdab88bc645381959ec34b",
+      "size_bytes": 2812
+    },
+    {
+      "path": "docs/JAPANESE_PITCH_ACCENT_MODEL_0.8.3.md",
+      "sha256": "606f26645e440b671c17e665b48be4f8aa42fd4dc7d8003ad8f20a9306bc8982",
+      "size_bytes": 11358
+    },
+    {
+      "path": "docs/LOCALIZATION_0.7.1.md",
+      "sha256": "75c03b6ee66c9173645cf5462ac7d3c038af5ea2677f621773bf07468406368c",
+      "size_bytes": 722
+    },
+    {
+      "path": "docs/MIGRATION_MATRIX_0.9.0.md",
+      "sha256": "ba71fcb27caa15b0ea821c5447bacc9e4183c9f8bb61fc5b2f8e8737269b676c",
+      "size_bytes": 971
+    },
+    {
+      "path": "docs/OFFICIAL_LEARNING_GUIDES_0.9.2.md",
+      "sha256": "64edcb5bc7d0c429e76b1e707f177a83a23924c6ad786acdfb56c5fdf3a1005f",
+      "size_bytes": 1413
+    },
+    {
+      "path": "docs/OPEN_SOURCE_MODEL.md",
+      "sha256": "2761ffb01f759428d728f1c3dcf737c3dec582e7d9a403c6400f2db1fd21b9a6",
+      "size_bytes": 826
+    },
+    {
+      "path": "docs/PDF_EXPORT_FRAMEWORK_0.6.3.md",
+      "sha256": "0cdc3ca6e22284b88fdaed508ebdce7c98842d158fd6258f20c8869801385dfe",
+      "size_bytes": 2014
+    },
+    {
+      "path": "docs/PDF_OUTPUT_0.6.4.md",
+      "sha256": "7fd2abcb24c3c66ce035956b3001f800f663d4cf5e0ec7d7ea4d425f236109bb",
+      "size_bytes": 722
+    },
+    {
+      "path": "docs/PERSONAL_PHONOLOGICAL_MEMORY_0.8.0.md",
+      "sha256": "b66c1672b8a38eb7ab90e4e21aa4bfb97c76b1939ee9c9320d2badeb9132e5dd",
+      "size_bytes": 4881
+    },
+    {
+      "path": "docs/PHONODB_FORMAT_SPEC_0.8.0.md",
+      "sha256": "907c361c4495e8d9c58b7fcf566ea3a5bfb1c7882cbae040be7b0c268b8a65e4",
+      "size_bytes": 1888
+    },
+    {
+      "path": "docs/PHONODB_FORMAT_SPEC_0.9.0.md",
+      "sha256": "3a1812c54f6dbec99b8b41fd53ab1718c3812527b48e62ebfe3336e52f93c5e4",
+      "size_bytes": 1510
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_GUIDE_ZH.md",
+      "sha256": "4d2cd9d7bcf95cb2caecff27e9b2b15fc9e5cfc66e620bcd0bb5438b43d878e7",
+      "size_bytes": 5855
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_SPEC_0.7.md",
+      "sha256": "64da8025ccff59fb82824ffcab2329a7dee563725c6e73f78e9d028b98f011c9",
+      "size_bytes": 10502
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_SPEC_0.8.1.md",
+      "sha256": "fd6cfe4731aad61e003d3a44396181c1e5febc59117d6e3c170eb1fe809c3bf3",
+      "size_bytes": 2428
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_SPEC_0.8.2.md",
+      "sha256": "2516f4e8bc5bf7a8b38dededf354c11bc46bc51f8aecee12e50a7fd0d67a9138",
+      "size_bytes": 1212
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_SPEC_0.8.md",
+      "sha256": "5481760a32c64bf0a1c8c1884fe1927c7443d4181439bacb8bddf57354b1c3cd",
+      "size_bytes": 9094
+    },
+    {
+      "path": "docs/PHONODOC_FORMAT_SPEC_0.9.0.md",
+      "sha256": "a9f951658c6d6b861b8cbfb9bbaa1ff2fa0e1c531ddaf4fc4cd1d37ac48037b5",
+      "size_bytes": 2991
+    },
+    {
+      "path": "docs/PITCH_LAYOUT_0.6.2.md",
+      "sha256": "f9267b8126858a15e1e2a171757ef52dae8f8ff8f753048e1ca9e117920bbaa5",
+      "size_bytes": 1228
+    },
+    {
+      "path": "docs/PROJECT_HISTORY_PUBLIC.md",
+      "sha256": "578dbbbcb8642af5044af136a2be4d51302c74bc63643c8b54b4ced456c4df3a",
+      "size_bytes": 1392
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_PREP_0.9.2.md",
+      "sha256": "a1fda3ff2821fef7cfa060aa24d8bf1b97798cb67ce0773c634107a6fd4c1ed2",
+      "size_bytes": 1325
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_PREP_0.9.3.md",
+      "sha256": "4a76579b3730ef1264e648d52c8a544d62680a213fd04ca377261be7ce34854b",
+      "size_bytes": 887
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_PREP_0.9.4.md",
+      "sha256": "9da6fb0df47cb16a0dcc6d02ee85b37ac7352c5112d177bc398e8015d5717987",
+      "size_bytes": 656
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_PREP_0.9.5.md",
+      "sha256": "9f0218aa83b0a7852c32e83afae6365d58475df63a713f7af2f00f0efcefc60a",
+      "size_bytes": 770
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_PREP_0.9.7.md",
+      "sha256": "4cb6dc519ba8cead89573c2c87a8430d3eedbb3e2820fb0da8e078c816a465c0",
+      "size_bytes": 394
+    },
+    {
+      "path": "docs/PUBLIC_SAMPLE_POLICY.md",
+      "sha256": "e51800d23b4c59e1715c0da98a488a8c86453003d2f6387a1fba2ff85eed6678",
+      "size_bytes": 1036
+    },
+    {
+      "path": "docs/README_DOCS.md",
+      "sha256": "a135500a54d77ea57ebb0f4d20e1ab5f3103dcab534aab363e7b5a864b944380",
+      "size_bytes": 1563
+    },
+    {
+      "path": "docs/RELEASE_AND_TESTING.md",
+      "sha256": "af387a736cd75d66b6634f98a01c727b917da174db3fa60d41db7ffbc1d73cb8",
+      "size_bytes": 680
+    },
+    {
+      "path": "docs/RETRIEVAL_SESSIONS_0.7.4.md",
+      "sha256": "2f1ea4abc6a1d759589d69d8ac09147649a057650e6b24c283d895b78e97bdc1",
+      "size_bytes": 4516
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sha256": "d0eaa73e08c80e3c843f4c7012bf9b9074e714ad13d19e9118ba911af09d07d8",
+      "size_bytes": 935
+    },
+    {
+      "path": "docs/SEMANTIC_INTEGRITY_0.8.10.md",
+      "sha256": "f903fabca4d159c3076f7474e940e6ac1e8ad6079cc3a6961c60dc20a04ddb46",
+      "size_bytes": 2703
+    },
+    {
+      "path": "docs/STABILIZATION_0.6.5.md",
+      "sha256": "d0b6d2aa0777b9ed8edb6178b0d1ef5307f8a9e058fb90c84c56c3ef90f384be",
+      "size_bytes": 1147
+    },
+    {
+      "path": "docs/STUDY_DISPLAY_MODES_0.7.3.md",
+      "sha256": "dec1f98a55b1a19f5bd6aa8b18b27b68fcc9f450730e453f94087f906268d5d7",
+      "size_bytes": 3571
+    },
+    {
+      "path": "docs/STUDY_WORKFLOW_0.7.0.md",
+      "sha256": "a731316ddbcfc27c3e5d6b503a9ae8a94196fa9d798b7cb02653e3f507ce1170",
+      "size_bytes": 1774
+    },
+    {
+      "path": "docs/THIRD_PARTY_NOTICES.md",
+      "sha256": "db34b5e681c6b6a667edf41e1e83ce4ef7ab7c979d75483a1f598dd8e90ef6ca",
+      "size_bytes": 1122
+    },
+    {
+      "path": "docs/UI_INTERACTION_POLISH_0.8.5.md",
+      "sha256": "9ff792b536a986900d997f77ca30b0e9a1a0508f92763b58a1f72f74d2d59743",
+      "size_bytes": 2628
+    },
+    {
+      "path": "docs/VERSIONING_AND_COMPATIBILITY.md",
+      "sha256": "79f77a5902a766db6974a99f7bc3c6135d83e8215da5a8192a795adfb507dd70",
+      "size_bytes": 5625
+    },
+    {
+      "path": "docs/WINDOWS_FILE_ASSOCIATION_0.6.1.md",
+      "sha256": "a752397b706717754e05ba859ea57b4c68ca80eff100b2ec207ad1af11e78cac",
+      "size_bytes": 1332
+    },
+    {
+      "path": "docs/WINDOWS_SETUP_0.9.4.md",
+      "sha256": "21c2770af8d0e88faf16d349917cac992d10a7703622bf41c93892d9220ef5e9",
+      "size_bytes": 1649
+    },
+    {
+      "path": "media/README.md",
+      "sha256": "d63f46ca453ef6cec5b2841316f4af23749a2f9d8d85c4397d6642dfd17da59a",
+      "size_bytes": 672
+    },
+    {
+      "path": "media/phonolayer-app-icon-master.png",
+      "sha256": "ea9491b25cb3441a784afb2e2eee84602d77237c9cab38fda0cf36cef42187bd",
+      "size_bytes": 265579
+    },
+    {
+      "path": "media/phonolayer-public-beta-poster.png",
+      "sha256": "e24d8e895dcd191fb298b0171c6a9e94a15f5445e704f1421af9e19f82925365",
+      "size_bytes": 1714391
+    },
+    {
+      "path": "media/phonolayer-wordmark.png",
+      "sha256": "9f8d1392feacfa6d9ff9c068f6c0d394036021b03d20232c56d1686ea74c522d",
+      "size_bytes": 259856
+    },
+    {
+      "path": "qa/fixtures/malformed_duplicate_member.phonodb",
+      "sha256": "1fbe8e2a8413e7183684c149f80f1ec4f63c525e5ea7aef7d9696baac839e51b",
+      "size_bytes": 395
+    },
+    {
+      "path": "qa/fixtures/phonodb_v070_legacy.phonodb",
+      "sha256": "0beaaf87013804fffe83e16615a95656ed652a2f3f2b6947281dbaf942c3bc77",
+      "size_bytes": 778
+    },
+    {
+      "path": "qa/fixtures/phonodb_v080_current.phonodb",
+      "sha256": "3269467f244af5ab78ec359aa0182c3f50ff958a66b173a02985a7775593b2f6",
+      "size_bytes": 1562
+    },
+    {
+      "path": "qa/fixtures/phonodb_v090_current.phonodb",
+      "sha256": "7239862c884bcaa33291d3dcec93ece776097136b0cec2a7b63d420f8bc90c7b",
+      "size_bytes": 1661
+    },
+    {
+      "path": "qa/fixtures/phonodoc_v070_fixture.phonodoc",
+      "sha256": "21db1bcef17f8f0690b240ec4bcc465775d5be0dfdac3df4595785cc1b4ff37b",
+      "size_bytes": 525
+    },
+    {
+      "path": "qa/fixtures/phonodoc_v080_fixture.phonodoc",
+      "sha256": "91eba1b9550a4a61e5f5da39d6328159ad7bed0e8ee2814eca1de49161212188",
+      "size_bytes": 525
+    },
+    {
+      "path": "qa/fixtures/phonodoc_v081_fixture.phonodoc",
+      "sha256": "cf38c37d7b2c6bf7815cd82bab4a5031f263b21612cd4ecba9106217192207c5",
+      "size_bytes": 525
+    },
+    {
+      "path": "qa/fixtures/phonodoc_v082_fixture.phonodoc",
+      "sha256": "071a87257e1fe26c8b55c57541ecc8def12cd5f53636a538a69f6453d88d537c",
+      "size_bytes": 540
+    },
+    {
+      "path": "qa/fixtures/phonodoc_v090_fixture.phonodoc",
+      "sha256": "3715501e477d6d4d38fc5f0f2f4840215436d28054d85ace9ad6caadc77b8030",
+      "size_bytes": 854
+    },
+    {
+      "path": "runtime-lock.json",
+      "sha256": "14f37ae17a08f32e9e1927279e367f1f4b810c6eef4485faaca9e0f6d7f51c63",
+      "size_bytes": 920
+    },
+    {
+      "path": "samples/README.md",
+      "sha256": "335c8e0c305331e89063caf052d8871459400ec49bd81141bbd2380c2a6920d7",
+      "size_bytes": 697
+    },
+    {
+      "path": "samples/public/Cantonese/Cantonese_Reading_Demo.phonodoc",
+      "sha256": "806790fbaecac5b4bd94321a052cfa8c901cab169dac01ca9f1f58e246429e02",
+      "size_bytes": 3764
+    },
+    {
+      "path": "samples/public/Japanese/Japanese_Reading_Demo.phonodoc",
+      "sha256": "4b01313a313e7deaa386d99a203c1060803219ae5880cc405cf09799a6c97461",
+      "size_bytes": 4146
+    },
+    {
+      "path": "samples/public/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "size_bytes": 7048
+    },
+    {
+      "path": "samples/public/Official_Learning_Guides/00_Multilingual_Learning_Overview.phonodoc",
+      "sha256": "c9c4529799b003a8d46027544dcf5f7acaf61bdd93829aa082ead078fa0a5220",
+      "size_bytes": 4146
+    },
+    {
+      "path": "samples/public/Official_Learning_Guides/01_Text_Form_Sound.phonodoc",
+      "sha256": "b8179c323509216dc82e5d441701f65f5ab2a7717feafebb832e99ac431dab0c",
+      "size_bytes": 4012
+    },
+    {
+      "path": "samples/public/Official_Learning_Guides/02_Retrieval_Before_Reveal.phonodoc",
+      "sha256": "3b3fffa29d5c7983222bb2e972f3c2d07e7fa956d3eb3e42354bd98beb452195",
+      "size_bytes": 4071
+    },
+    {
+      "path": "samples/public/Official_Learning_Guides/03_Cross_Language_Transfer.phonodoc",
+      "sha256": "7fa86079221af3a717a075a0108d3185ecc29d0ce6d26655e56557ec94359d29",
+      "size_bytes": 3859
+    },
+    {
+      "path": "samples/public/Official_Learning_Guides/04_Personal_Phonological_Memory.phonodoc",
+      "sha256": "b128c845d68e876860888a66015412f1fb854ce16bb7654612a7cdab85e84f22",
+      "size_bytes": 3707
+    },
+    {
+      "path": "samples/public/README.md",
+      "sha256": "819c935014efcdc44765a3feb8a1527383605745669c9cff4c32f16a8a533edb",
+      "size_bytes": 1142
+    },
+    {
+      "path": "tools/BACKUP_ELECTRON_RELEASE.ps1",
+      "sha256": "fc0c9737755ea436f2f862fb2f1ffd71bf9bd76d43582aba4ff0180d53be6c75",
+      "size_bytes": 2083
+    },
+    {
+      "path": "tools/INSTALL_RUNTIME.ps1",
+      "sha256": "ce101b9f95dea57a23a9fd3a2f9fa5c0355fa4d132f45a8953e843a1016b882d",
+      "size_bytes": 5911
+    },
+    {
+      "path": "tools/LAUNCH_PHONOLAYER.ps1",
+      "sha256": "00d6e14ffcda448ebe1d487172d96f36ab5f3a955f18b23a43c0732f35639fcf",
+      "size_bytes": 522
+    },
+    {
+      "path": "tools/SETUP_GUI.ps1",
+      "sha256": "7950d9909529abfffb5fc74d5b3b2efcaed543e5acb83ab468058c03be8b1b81",
+      "size_bytes": 13414
+    },
+    {
+      "path": "tools/SYNC_APP.ps1",
+      "sha256": "66fb3ba68d5cd166d4832bc339b9e9dbdfe16dd837ff148ba43a05393d1e3f19",
+      "size_bytes": 728
+    },
+    {
+      "path": "tools/qa_browser.py",
+      "sha256": "05d9945e9c8efba72ead0f92ffe3028a02dda9d8c1d652b60a6b735702727cb8",
+      "size_bytes": 14193
+    },
+    {
+      "path": "tools/qa_db_logic.js",
+      "sha256": "702ba57a66e703169c58213e8aea23e6f6b5202944a61aa034bcb6b12794db82",
+      "size_bytes": 6531
+    },
+    {
+      "path": "tools/qa_format_freeze.py",
+      "sha256": "ebc2ba924cb60b45ce5b8dccc7053c237893a4ddaca4ada129af9aa0b1bc344f",
+      "size_bytes": 2470
+    },
+    {
+      "path": "tools/qa_logic.js",
+      "sha256": "137f9f5854cf7404c71da67910cda96280fbeaba213b556b8dd291c1ae90f5ce",
+      "size_bytes": 12548
+    },
+    {
+      "path": "tools/qa_release_zip.py",
+      "sha256": "b356f66d153bc45acba39abca35179ffa4a99c3a4000882ab2b16f1775788e6a",
+      "size_bytes": 2898
+    },
+    {
+      "path": "tools/qa_runtime_lock.py",
+      "sha256": "aec74e304de7cea41424b2abf96ef08d09d864ca14b258387b7213a7de3efdea",
+      "size_bytes": 1514
+    },
+    {
+      "path": "tools/qa_static.py",
+      "sha256": "c7a745b9bfa3c93785779296d15b67f910954c39fc76b8e736f2adf3827d9ae1",
+      "size_bytes": 10722
+    },
+    {
+      "path": "tools/qa_windows_setup.py",
+      "sha256": "1e6c90ec1d1ba2c6a42d261f6c34c6a150cb36f9bc85971de4270b9c5a00e9aa",
+      "size_bytes": 1649
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "format": "phonolayer-runtime-lock",
+  "schema": 1,
+  "updated": "2026-09-26",
+  "runtime": {
+    "name": "Electron",
+    "version": "44.4.5",
+    "platform": "win32",
+    "arch": "x64",
+    "filename": "electron-v44.4.5-win32-x64.zip",
+    "sizeBytes": 158184819,
+    "sha256": "11c395820a5aaa8ebcc0686b476d0ac98a730274ebfbdc8cf5538a7c2815cb5d",
+    "releaseUrl": "https://github.com/electron/electron/releases/tag/v44.4.5",
+    "officialAssetUrl": "https://github.com/electron/electron/releases/download/v44.4.5/electron-v44.4.5-win32-x64.zip",
+    "fallbackMirrorUrl": "https://npmmirror.com/mirrors/electron/44.4.5/electron-v44.4.5-win32-x64.zip",
+    "shasumsFilename": "SHASUMS256.txt",
+    "shasumsUrl": "https://github.com/electron/electron/releases/download/v44.4.5/SHASUMS256.txt",
+    "shasumsSha256": "a0379166a35f9d3e2e1b63a72b90ddfe54a9558c56a3bde82e98f63823591d72",
+    "upstreamLicense": "MIT"
+  }
+}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use 文之形声 · PhonoLayer in research, teaching, or a derived tool, please cite the software."
+title: "文之形声 · PhonoLayer"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Yuzhan
+version: 0.9.7
+date-released: 2026-09-26
+license: MPL-2.0
+abstract: "A free, local-first, manual-first phonological learning workspace with auditable .phonodoc and .phonodb formats."

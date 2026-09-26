@@ -1,0 +1,9 @@
+{
+  "name": "phonolayer-desktop",
+  "version": "0.9.7",
+  "private": true,
+  "description": "文之形声 · PhonoLayer Desktop: free, local-first, manual-first phonological learning workspace (GitHub Release Preparation)",
+  "main": "main.js",
+  "author": "Yuzhan Zhang",
+  "license": "MPL-2.0"
+}

@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>文之形声 · PhonoLayer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-study-mode="study" data-phonetic-mode="text">
+  <header class="app-chrome">
+    <div class="title-row">
+      <div class="quick-access" aria-label="快速访问工具栏">
+        <button id="saveBtn" title="保存 Ctrl+S">💾</button>
+        <button id="undoBtn" title="撤销 Ctrl+Z">↶</button>
+        <button id="redoBtn" title="重做 Ctrl+Y">↷</button>
+        <button id="uiLanguageQuickBtn" title="系统语言 / UI Language" aria-label="系统语言 / UI Language">🌐</button>
+      </div>
+      <div class="app-title">
+        <strong>文之形声 · PhonoLayer</strong>
+        <span id="windowDocTitle">新学习文档</span>
+      </div>
+      <div class="title-meta"><span id="buildVersion">Desktop v0.9.7 · GitHub Release Preparation</span></div>
+    </div>
+
+    <div class="ribbon-tab-row">
+      <button id="fileTabBtn" class="file-tab">文件</button>
+      <button class="ribbon-tab active" data-ribbon="home">开始</button>
+      <button class="ribbon-tab" data-ribbon="phonetic">表音学习</button>
+      <button id="phoneticContextTab" class="ribbon-tab contextual-tab hidden" data-ribbon="phoneticContext">表音工具</button>
+      <button class="ribbon-tab" data-ribbon="layout">布局</button>
+      <button class="ribbon-tab" data-ribbon="view">视图</button>
+      <button class="ribbon-tab" data-ribbon="data">个人语音记忆</button>
+    </div>
+
+    <div class="ribbon-panels">
+      <section class="ribbon-panel active" data-panel="home">
+        <div class="ribbon-group clipboard-group">
+          <div class="group-body compact-buttons">
+            <button data-cmd="cut">剪切</button>
+            <button data-cmd="copy">复制</button>
+            <button id="selectAllBtn">全选</button>
+          </div>
+          <div class="group-label">剪贴板</div>
+        </div>
+
+        <div class="ribbon-group font-group">
+          <div class="group-body font-grid">
+            <select id="bodyFontSelect" title="正文/选中文字字体"></select>
+            <input id="bodyFontSize" type="number" min="8" max="96" step="1" value="20" title="字号" />
+            <button id="fontGrowBtn" title="增大字号">A↑</button>
+            <button id="fontShrinkBtn" title="减小字号">A↓</button>
+            <button data-cmd="bold" class="toggle-command" title="粗体"><b>B</b></button>
+            <button data-cmd="italic" class="toggle-command" title="斜体"><i>I</i></button>
+            <button data-cmd="underline" class="toggle-command" title="下划线"><u>U</u></button>
+            <div class="color-control" id="textColorControl">
+              <label class="color-button" title="文字颜色 / 自定义颜色">A<input id="textColor" type="color" value="#111827" /></label>
+              <button id="textColorMenuBtn" class="color-menu-toggle" type="button" title="常用文字颜色" aria-label="常用文字颜色">▾</button>
+              <div id="textColorPalette" class="color-palette-popover hidden" data-color-kind="text">
+                <div class="color-palette-title preset-title">常用</div><div class="color-swatches preset-swatches"></div>
+                <div class="color-palette-title recent-title">最近</div><div id="textColorRecent" class="color-swatches recent-swatches"></div>
+              </div>
+            </div>
+            <div class="color-control" id="highlightColorControl">
+              <label class="color-button highlight-color" title="高亮颜色 / 自定义颜色">▰<input id="highlightColor" type="color" value="#fff200" /></label>
+              <button id="highlightColorMenuBtn" class="color-menu-toggle" type="button" title="常用荧光笔颜色" aria-label="常用荧光笔颜色">▾</button>
+              <div id="highlightColorPalette" class="color-palette-popover hidden" data-color-kind="highlight">
+                <div class="color-palette-title preset-title">常用</div><div class="color-swatches preset-swatches"></div>
+                <div class="color-palette-title recent-title">最近</div><div id="highlightColorRecent" class="color-swatches recent-swatches"></div>
+              </div>
+            </div>
+            <button data-cmd="removeFormat">清格式</button>
+          </div>
+          <div class="group-label">字体</div>
+        </div>
+
+        <div class="ribbon-group paragraph-group">
+          <div class="group-body paragraph-controls">
+            <button data-cmd="justifyLeft" class="align-command" title="左对齐">≡←</button>
+            <button data-cmd="justifyCenter" class="align-command" title="居中">≡</button>
+            <button data-cmd="justifyRight" class="align-command" title="右对齐">→≡</button>
+            <button data-cmd="justifyFull" class="align-command" title="两端对齐">☰</button>
+            <select id="lineHeightSelect" title="行距">
+              <option value="1.5">1.5</option>
+              <option value="1.75">1.75</option>
+              <option value="2" selected>2.0</option>
+              <option value="2.25">2.25</option>
+              <option value="2.5">2.5</option>
+            </select>
+            <select id="firstLineIndentSelect" title="首行缩进">
+              <option value="0">首行 0 字</option>
+              <option value="1">首行 1 字</option>
+              <option value="2">首行 2 字</option>
+              <option value="custom">自定义…</option>
+            </select>
+            <button id="normalStyleBtn">正文</button>
+            <button id="heading1Btn">标题 1</button>
+            <button id="heading2Btn">标题 2</button>
+          </div>
+          <div class="group-label">段落与样式</div>
+        </div>
+
+        <div class="ribbon-group learn-group">
+          <div class="group-body compact-buttons">
+            <button id="annotateBtn" class="primary">添加注音</button>
+            <button id="groupAnnotateBtn">整词注音</button>
+            <button id="clearAnnotationBtn">拆除注音</button>
+          </div>
+          <div class="group-label">学习</div>
+        </div>
+      </section>
+
+      <section class="ribbon-panel" data-panel="phonetic">
+        <div class="ribbon-group wide">
+          <div class="group-body manual-principle">
+            <strong>Manual-first</strong>
+            <span>软件只保存你亲手确认的表音、声调和音高；不自动给答案。</span>
+          </div>
+          <div class="group-label">学习原则</div>
+        </div>
+        <div class="ribbon-group">
+          <div class="group-body stacked-controls">
+            <label>表音字体 <select id="phoneticFontSelect"></select></label>
+            <label>注音比例 <input id="rubyScale" type="number" min="0.30" max="0.90" step="0.01" /></label>
+          </div>
+          <div class="group-label">表音排版</div>
+        </div>
+        <div class="ribbon-group study-display-group">
+          <div class="group-body study-display-grid">
+            <label>学习预设 <select id="studyPresetSelect">
+              <option value="full">完整提示</option>
+              <option value="reading-only">只看读音</option>
+              <option value="pitch-only">只看音高</option>
+              <option value="hidden">全部隐藏</option>
+              <option value="reveal">点击揭示</option>
+              <option value="mastery">隐藏已掌握</option>
+              <option value="custom" disabled>自定义组合</option>
+            </select></label>
+            <label>显示层 <select id="phoneticModeSelect"><option value="text">文字注音</option><option value="pitch">五度音高</option><option value="both">文字 + 音高</option></select></label>
+            <label>显示策略 <select id="studyModeSelect"><option value="study">始终显示</option><option value="compact">按熟练度隐藏</option><option value="reading">点击揭示</option><option value="hidden">全部隐藏</option></select></label>
+            <label>熟练阈值 <select id="masteryThresholdSelect"><option value="1">≥ 1 · 学习中</option><option value="2">≥ 2 · 熟悉</option><option value="3">≥ 3 · 已掌握</option></select></label>
+          </div>
+          <div class="group-label">学习显示</div>
+        </div>
+        <div class="ribbon-group retrieval-group">
+          <div class="group-body retrieval-ribbon-controls">
+            <label>数量 <select id="retrievalCountSelect"><option value="10">10</option><option value="20">20</option><option value="all">全部</option></select></label>
+            <label>顺序 <select id="retrievalOrderSelect"><option value="document">文档顺序</option><option value="shuffle">随机</option></select></label>
+            <button id="startRetrievalBtn" class="primary">开始检索</button>
+          </div>
+          <div class="group-label">检索练习</div>
+        </div>
+        <div class="ribbon-group interaction-mode-group">
+          <div class="group-body interaction-mode-switch" role="group" aria-label="注音交互模式">
+            <button id="interactionQuickBtn" class="interaction-mode-btn active" data-interaction-mode="quick" title="已有注音不自动被选中；双击上方注音层直接编辑">⚡ 快捷</button>
+            <button id="interactionObjectBtn" class="interaction-mode-btn" data-interaction-mode="object" title="保留 v0.7.0 的对象选择与 Ribbon 快速编辑机制">▣ 对象</button>
+          </div>
+          <div class="group-label">注音交互</div>
+        </div>
+        <div class="ribbon-group">
+          <div class="group-body compact-buttons">
+            <button id="editAnnotationBtn">处理当前选择</button>
+            <button id="revealAllBtn">临时显示全部</button>
+          </div>
+          <div class="group-label">标注对象</div>
+        </div>
+      </section>
+
+      <section class="ribbon-panel context-ribbon-panel" data-panel="phoneticContext">
+        <div class="ribbon-group context-object-group">
+          <div class="group-body context-object-body">
+            <span id="contextObjectKind" class="context-badge">未选择</span>
+            <input id="quickBaseInput" class="context-base-input" autocomplete="off" aria-label="正文" readonly />
+          </div>
+          <div class="group-label">当前学习对象</div>
+        </div>
+        <div class="ribbon-group context-mode-group">
+          <div class="group-body stacked-controls compact-stack">
+            <label>对齐方式 <select id="quickAnnotationMode"><option value="segment">逐字对齐</option><option value="group">整词注音</option></select></label>
+            <label>熟练度 <select id="quickMasterySelect"><option value="0">0 · 新遇到</option><option value="1">1 · 学习中</option><option value="2">2 · 熟悉</option><option value="3">3 · 已掌握</option></select></label>
+          </div>
+          <div class="group-label">学习属性</div>
+        </div>
+        <div class="ribbon-group context-input-group">
+          <div class="group-body context-input-grid">
+            <label><span>读音 / 表音</span><input id="quickReadingInput" autocomplete="off" placeholder="完全人工输入" /></label>
+            <label><span>五度音高</span><input id="quickPitchInput" autocomplete="off" placeholder="例 5-5 | 2-1-4" /></label>
+            <label class="context-note-field"><span>备注</span><input id="quickNoteInput" autocomplete="off" placeholder="可选" /></label>
+          </div>
+          <div class="group-label">人工表音数据</div>
+        </div>
+        <div class="ribbon-group context-action-group">
+          <div class="group-body context-actions">
+            <button id="applyQuickAnnotationBtn" class="primary">应用</button>
+            <button id="openDetailedAnnotationBtn">详细编辑…</button>
+            <button id="removeQuickAnnotationBtn" class="danger hidden">拆除</button>
+          </div>
+          <div class="group-label">操作</div>
+        </div>
+        <div class="ribbon-group context-status-group wide">
+          <div id="quickWorkflowStatus" class="group-body context-status">选中文字后在这里亲手填写读音；不会自动给答案。</div>
+          <div class="group-label">Manual-first 工作流</div>
+        </div>
+      </section>
+
+      <section class="ribbon-panel" data-panel="layout">
+        <div class="ribbon-group">
+          <div class="group-body stacked-controls">
+            <label>纸张 <select id="paperSizeSelect"><option value="A4">A4</option><option value="Letter">Letter</option></select></label>
+            <label>页边距 <select id="marginPresetSelect"><option value="normal">普通</option><option value="narrow">窄</option><option value="wide">宽</option></select></label>
+          </div>
+          <div class="group-label">页面设置</div>
+        </div>
+        <div class="ribbon-group">
+          <div class="group-body stacked-controls">
+            <label>文档语言 <select id="docLanguage"><option value="ja">日语</option><option value="zh-Mandarin">汉语普通话</option><option value="yue">粤语</option></select></label>
+            <label>默认行距 <select id="defaultLineHeight"><option value="1.75">1.75</option><option value="2" selected>2.0</option><option value="2.25">2.25</option><option value="2.5">2.5</option></select></label>
+          </div>
+          <div class="group-label">文档属性</div>
+        </div>
+        <div class="ribbon-group pdf-ribbon-group">
+          <div class="group-body compact-buttons">
+            <button id="pdfSettingsBtn">PDF 设置</button>
+            <button id="previewPdfBtn">预览 PDF</button>
+            <button id="exportPdfBtn" class="primary">导出 PDF</button>
+          </div>
+          <div class="group-label">PDF / 打印</div>
+        </div>
+      </section>
+
+      <section class="ribbon-panel" data-panel="view">
+        <div class="ribbon-group zoom-group">
+          <div class="group-body zoom-controls">
+            <button id="zoomOutBtn">−</button>
+            <input id="zoomSlider" type="range" min="25" max="300" step="5" value="100" />
+            <button id="zoomInBtn">＋</button>
+            <button id="zoomResetBtn">100%</button>
+          </div>
+          <div class="group-label">缩放</div>
+        </div>
+        <div class="ribbon-group ui-language-group">
+          <div class="group-body stacked-controls">
+            <label>系统语言 <select id="uiLanguageSelect">
+              <option value="system">跟随系统</option>
+              <option value="zh-CN">简体中文</option>
+              <option value="zh-TW">繁體中文</option>
+              <option value="en-US">English</option>
+              <option value="ja-JP">日本語</option>
+            </select></label>
+          </div>
+          <div class="group-label">界面语言</div>
+        </div>
+        <div class="ribbon-group view-marks-group">
+          <div class="group-body view-mark-controls">
+            <button id="toggleLineBreaksBtn" class="toggle-command" title="显示/隐藏换行与段落编辑标记（Ctrl+Shift+8）"><span class="mark-icon">↵</span><span>换行标记</span></button>
+            <button id="toggleMarginMarksBtn" class="toggle-command" title="显示/隐藏纸张页边距四角标记"><span class="corner-icon">⌜⌝</span><span>页边距标记</span></button>
+          </div>
+          <div class="group-label">编辑标记</div>
+        </div>
+        <div class="ribbon-group wide">
+          <div class="group-body manual-principle">
+            <span>灰色编辑标记只辅助排版，不写入文档，也不会进入 PDF / 打印。</span>
+          </div>
+          <div class="group-label">文档窗口</div>
+        </div>
+      </section>
+
+      <section class="ribbon-panel" data-panel="data">
+        <div class="ribbon-group">
+          <div class="group-body compact-buttons">
+            <button id="openDbBtn">打开个人语音记忆</button>
+            <button id="lookupMemoryBtn">查当前文字记忆</button>
+            <button id="exportDbBtn">导出 .phonodb</button>
+            <button id="importDbBtn">导入 .phonodb</button>
+          </div>
+          <div class="group-label">个人语音记忆</div>
+        </div>
+        <div class="ribbon-group wide">
+          <div id="dbRibbonSummary" class="group-body manual-principle"><span>正在建立你的个人语音记忆…</span></div>
+          <div class="group-label">状态</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="document-tabs-row">
+      <div id="documentTabs" class="document-tabs"></div>
+      <button id="newTabBtn" class="tab-plus" title="新建文档">＋</button>
+    </div>
+  </header>
+
+  <main class="desktop-workspace">
+    <div class="paper-stage" id="paperStage">
+      <article id="editor" class="editor" contenteditable="true" spellcheck="false" aria-label="学习文档编辑区"></article>
+      <div id="formattingOverlay" class="formatting-overlay" aria-hidden="true"></div>
+      <div id="marginMarks" class="margin-marks" aria-hidden="true">
+        <span class="margin-mark top-left"></span><span class="margin-mark top-right"></span>
+        <span class="margin-mark bottom-left"></span><span class="margin-mark bottom-right"></span>
+      </div>
+    </div>
+  </main>
+
+  <div id="imageSelectionOverlay" class="image-selection-overlay hidden" aria-hidden="true">
+    <span class="image-resize-center"></span>
+    <button type="button" class="image-resize-handle nw" data-corner="nw" tabindex="-1" aria-label="Resize image northwest"></button>
+    <button type="button" class="image-resize-handle ne" data-corner="ne" tabindex="-1" aria-label="Resize image northeast"></button>
+    <button type="button" class="image-resize-handle sw" data-corner="sw" tabindex="-1" aria-label="Resize image southwest"></button>
+    <button type="button" class="image-resize-handle se" data-corner="se" tabindex="-1" aria-label="Resize image southeast"></button>
+  </div>
+
+  <footer class="statusbar">
+    <div class="status-left">
+      <span id="saveState">未保存</span>
+      <span id="statusLanguage">日语</span>
+      <span id="statusRevision">r1</span>
+      <span id="charCount">0 字符</span>
+      <span id="annotationCount">0 条表音</span>
+    </div>
+    <div class="status-right">
+      <button id="showFileBtn" class="status-link" title="在资源管理器中显示当前文件">尚未保存到磁盘</button>
+      <div class="status-zoom" title="Ctrl + 鼠标滚轮也可缩放纸张">
+        <button id="statusZoomOutBtn" class="status-zoom-button" title="缩小">−</button>
+        <input id="statusZoomSlider" type="range" min="25" max="300" step="5" value="100" aria-label="文档缩放" />
+        <button id="statusZoomInBtn" class="status-zoom-button" title="放大">＋</button>
+        <button id="zoomState" class="status-zoom-value" title="恢复 100%">100%</button>
+      </div>
+    </div>
+  </footer>
+
+  <section id="fileBackstage" class="backstage" aria-hidden="true">
+    <div class="backstage-rail">
+      <div class="backstage-title">文件</div>
+      <button data-file-action="new">新建</button>
+      <button data-file-action="open">打开</button>
+      <button data-file-action="save">保存</button>
+      <button data-file-action="saveAs">另存为</button>
+      <button data-file-action="exportPdf">导出 PDF</button>
+      <button data-file-action="pdfSettings">PDF 导出设置</button>
+      <button data-file-action="print">打印</button>
+      <button data-file-action="close">关闭当前文档</button>
+      <div class="rail-spacer"></div>
+      <button data-file-action="exit">退出 PhonoLayer</button>
+      <button id="backstageBackBtn" class="back-button">← 返回文档</button>
+    </div>
+    <div class="backstage-main">
+      <h1>PhonoLayer · 文件</h1>
+      <div class="backstage-grid">
+        <section class="backstage-card">
+          <h2>当前文档</h2>
+          <div id="backstageCurrentDoc" class="doc-summary"></div>
+        </section>
+        <section class="backstage-card">
+          <h2>最近打开</h2>
+          <div id="recentFiles" class="recent-list"></div>
+        </section>
+        <section class="backstage-card">
+          <h2>官方学习样例</h2>
+          <p>全部为文之形声 · PhonoLayer 原创公开材料，用来说明多语言学习、文/形/声分层、检索学习与个人语音记忆；不包含私人教材、歌词、真题或游戏文本。</p>
+          <div class="backstage-button-row">
+            <button data-public-sample="guide-overview">00 · 多语言学习导览</button>
+            <button data-public-sample="guide-text-form-sound">01 · 文、形、声</button>
+            <button data-public-sample="guide-retrieval">02 · 先回忆，再揭示</button>
+            <button data-public-sample="guide-transfer">03 · 跨语言迁移</button>
+            <button data-public-sample="guide-memory">04 · 个人语音记忆</button>
+          </div>
+          <div class="backstage-button-row" style="margin-top:8px">
+            <button data-public-sample="japanese-reading">日语读音演示</button>
+            <button data-public-sample="cantonese-reading">粤语 / Jyutping 演示</button>
+          </div>
+        </section>
+        <section class="backstage-card">
+          <h2>PDF 导出</h2>
+          <p>使用 Electron 的矢量打印管线生成可搜索 PDF。v0.6.4 起支持学习预设、系统 PDF 预览、页眉/页码，以及更严格的分页保护；v0.6.5 继续巩固保存与打印状态隔离。</p>
+          <div class="backstage-button-row"><button id="backstagePdfSettingsBtn">PDF 设置</button><button id="backstagePreviewPdfBtn">预览 PDF</button><button id="backstageExportPdfBtn" class="primary">导出 PDF</button></div>
+          <div id="pdfLastExport" class="doc-summary" style="margin-top:8px">尚未导出 PDF。</div>
+        </section>
+        <section class="backstage-card">
+          <h2>Windows 文件外观</h2>
+          <p>将 <code>.phonodoc</code> 注册为“PhonoLayer 文档”，在 Windows 11 资源管理器中显示专属图标，并支持双击打开。</p>
+          <button id="repairFileAssocBtn">修复 .phonodoc 文件关联</button>
+          <div id="fileAssocStatus" class="doc-summary" style="margin-top:8px"></div>
+        </section>
+        <section class="backstage-card">
+          <h2>实验开发期</h2>
+          <p>v0.x 不承诺旧文件格式兼容。当前优先优化编辑体验、注音模型和桌面工作流。</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="annotationDialog">
+    <form method="dialog" id="annotationForm">
+      <h2 id="annotationDialogTitle">添加注音</h2>
+      <label class="field"><span>正文</span><input id="baseInput" autocomplete="off" readonly /></label>
+      <label class="field"><span>读音 / 表音</span><input id="readingInput" autocomplete="off" /><small>完全人工输入；假名、数字拼音、粤拼等原样保存。</small></label>
+      <label class="field checkline"><input id="segmentCheck" type="checkbox" checked /><span>按空格逐字对齐。仅当读音段数与字符数一致时拆成多个标注对象。</span></label>
+      <label class="field"><span>音高系统（可选）</span><select id="pitchSystemSelect"><option value="none">不记录音高</option><option value="generic">通用五度音高</option><option value="ja-tokyo">日语 · 东京式 Pitch Accent</option></select></label>
+      <div id="genericPitchFields" class="pitch-system-panel hidden">
+        <label class="field"><span>五度音高轨迹（人工）</span><input id="pitchInput" autocomplete="off" placeholder="例：5-5 / 2-1-4 / H-L-L" /></label>
+      </div>
+      <div id="japanesePitchFields" class="pitch-system-panel japanese-pitch-editor hidden">
+        <div class="jpa-grid">
+          <label class="field"><span>标准 / 方言</span><select id="jaPitchDialect"><option value="ja-Tokyo">东京式（标准语模型）</option></select></label>
+          <label class="field"><span>表示方式</span><select id="jaPitchRepresentation"><option value="accent-nucleus">アクセント核</option><option value="manual-hl">手动 H/L</option></select></label>
+        </div>
+        <label class="field"><span>音拍 mora（完全人工，用 | 或空格分隔）</span><input id="jaMoraInput" autocomplete="off" placeholder="例：が | っ | こ | う" /></label>
+        <div id="jaAccentNucleusFields" class="jpa-grid">
+          <label class="field"><span>アクセント核</span><input id="jaAccentNucleusInput" type="number" min="0" step="1" value="0" /></label>
+          <div class="jpa-help"><strong>0 = 平板型</strong><span>1…N 表示在第 N 拍之后发生词汇性下降。</span></div>
+        </div>
+        <label id="jaManualHLField" class="field hidden"><span>逐拍 H/L（完全人工）</span><input id="jaManualHLInput" autocomplete="off" placeholder="例：L H H L" /></label>
+        <label class="field checkline"><input id="jaParticlePreviewCheck" type="checkbox" checked /><span>在编辑预览中显示一个虚拟助词拍，用来区分平板型与尾高型（不写进正文）。</span></label>
+        <div class="jpa-preview-card">
+          <div class="jpa-preview-head"><strong>日语音高预览</strong><span id="jaPitchTypeLabel">—</span></div>
+          <div id="jaPitchPreview" class="jpa-preview"></div>
+          <div id="jaPitchValidation" class="jpa-validation">请人工填写音拍；软件不会从假名或汉字自动分拍，也不会查词典。</div>
+        </div>
+        <div class="manual-note">这里保存的是你亲手确认的 mora、アクセント核或 H/L。五线谱只负责结构化显示；它不是实际语音 F0 曲线预测。未来自动化只能作为未确认建议，不会直接写入个人学习记忆。</div>
+      </div>
+      <label class="field"><span>熟练度</span><select id="masterySelect"><option value="0">0 · 新遇到</option><option value="1">1 · 学习中</option><option value="2">2 · 熟悉</option><option value="3">3 · 已掌握</option></select></label>
+      <label class="field"><span>备注（可选）</span><input id="noteInput" autocomplete="off" /></label>
+      <div class="manual-note">注音对象仍作为稳定学习实体保存。双击上方注音 / 音高层编辑表音数据；双击下方正文保留普通文字选择与编辑行为。</div>
+      <div class="dialog-actions"><button value="cancel">取消</button><button id="deleteAnnotationBtn" type="button" class="danger hidden">拆除注音</button><button id="confirmAnnotationBtn" value="default" class="primary">确定</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="newDocDialog">
+    <form method="dialog" id="newDocForm">
+      <h2>新建 PhonoLayer 文档</h2>
+      <label class="field"><span>标题</span><input id="newDocTitle" value="新学习文档" /></label>
+      <label class="field"><span>主要学习语言</span><select id="newDocLanguage"><option value="ja">日语</option><option value="zh-Mandarin">汉语普通话</option><option value="yue">粤语</option></select></label>
+      <div class="dialog-actions"><button value="cancel">取消</button><button value="default" class="primary">创建</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="databaseDialog" class="wide-dialog memory-dialog">
+    <form method="dialog">
+      <div class="dialog-heading-row"><h2>个人语音记忆</h2><button value="cancel">关闭</button></div>
+      <div id="databaseMeta" class="database-meta"></div>
+      <div id="memoryStats" class="memory-stats"></div>
+      <div class="memory-toolbar">
+        <input id="dbSearch" class="search-input" placeholder="搜索文字、读音、音高或来源文档" />
+        <select id="memoryLanguageFilter" aria-label="记忆语言过滤">
+          <option value="">全部语言</option>
+          <option value="current">当前文档语言</option>
+          <option value="ja">日语</option>
+          <option value="zh-Mandarin">汉语普通话</option>
+          <option value="yue">粤语</option>
+        </select>
+      </div>
+      <div class="memory-browser">
+        <div id="dbLedger" class="db-ledger memory-ledger"></div>
+        <aside id="memoryDetail" class="memory-detail">
+          <div class="memory-empty">选择一个你曾亲手确认过的“文字—读音”条目查看历史。PhonoLayer 不会根据这些记录自动猜新答案。</div>
+        </aside>
+      </div>
+    </form>
+  </dialog>
+
+
+  <dialog id="retrievalDialog" class="retrieval-dialog">
+    <form method="dialog">
+      <div class="dialog-heading-row"><h2>检索练习</h2><button id="retrievalEndBtn" type="button">结束本次</button></div>
+      <div id="retrievalPracticeView">
+        <div class="retrieval-meta-row"><span id="retrievalProgress">0 / 0</span><span id="retrievalSessionMode">文档顺序</span></div>
+        <div class="retrieval-prompt-card">
+          <div class="retrieval-kicker">请先回忆读音，再决定是否揭示答案</div>
+          <div id="retrievalPromptBase" class="retrieval-base"></div>
+          <div id="retrievalPromptSource" class="retrieval-source"></div>
+        </div>
+        <div id="retrievalRevealActions" class="retrieval-reveal-actions">
+          <button id="retrievalRecallRevealBtn" type="button" class="primary">我已回忆，揭示</button>
+          <button id="retrievalDirectRevealBtn" type="button">直接看答案</button>
+          <button id="retrievalSkipBtn" type="button">跳过</button>
+        </div>
+        <div id="retrievalAnswerPanel" class="retrieval-answer-panel hidden">
+          <div class="retrieval-answer-block"><span>读音 / 表音</span><strong id="retrievalAnswerReading"></strong></div>
+          <div id="retrievalPitchBlock" class="retrieval-answer-block"><span>五度音高</span><strong id="retrievalAnswerPitch"></strong></div>
+        </div>
+        <div id="retrievalRatingPanel" class="retrieval-rating-panel hidden">
+          <div class="retrieval-rating-row">
+            <span>读音自评</span>
+            <div class="retrieval-rating-buttons">
+              <button type="button" data-retrieval-reading-rating="again">没想起</button>
+              <button type="button" data-retrieval-reading-rating="hard">困难</button>
+              <button type="button" data-retrieval-reading-rating="good">正确</button>
+              <button type="button" data-retrieval-reading-rating="easy">轻松</button>
+            </div>
+          </div>
+          <div id="retrievalPitchRatingRow" class="retrieval-rating-row">
+            <span>音高自评</span>
+            <div class="retrieval-rating-buttons">
+              <button type="button" data-retrieval-pitch-rating="again">没想起</button>
+              <button type="button" data-retrieval-pitch-rating="hard">困难</button>
+              <button type="button" data-retrieval-pitch-rating="good">正确</button>
+              <button type="button" data-retrieval-pitch-rating="easy">轻松</button>
+              <button type="button" data-retrieval-pitch-rating="unrated">未练音高</button>
+            </div>
+          </div>
+          <div class="retrieval-next-row"><button id="retrievalNextBtn" type="button" class="primary" disabled>下一项</button></div>
+        </div>
+      </div>
+      <div id="retrievalSummaryView" class="retrieval-summary-view hidden">
+        <h3>本次检索完成</h3>
+        <div id="retrievalSummaryStats" class="retrieval-summary-stats"></div>
+        <div class="manual-note">记录的是你的揭示行为与自评，不会自动修改注音答案或熟练度。后续版本再研究如何把检索历史映射到学习状态。</div>
+        <div class="dialog-actions"><button id="retrievalSummaryCloseBtn" type="button" class="primary">关闭</button></div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="pdfExportDialog" class="pdf-dialog">
+    <form method="dialog" id="pdfExportForm">
+      <h2>PDF / 打印输出设置</h2>
+      <label class="field"><span>输出预设</span><select id="pdfPreset"><option value="custom">自定义</option><option value="current">当前显示</option><option value="study">学习版：文字 + 音高 + 高亮</option><option value="review">复习版：隐藏表音与高亮</option><option value="text">文字注音版</option><option value="pitch">五度音高版</option></select></label>
+      <div class="pdf-settings-grid">
+        <label class="field"><span>纸张</span><select id="pdfPaperSize"><option value="A4">A4</option><option value="Letter">Letter</option></select></label>
+        <label class="field"><span>方向</span><select id="pdfOrientation"><option value="portrait">纵向</option><option value="landscape">横向</option></select></label>
+        <label class="field"><span>页边距</span><select id="pdfMarginPreset"><option value="document">跟随文档</option><option value="normal">普通</option><option value="narrow">窄</option><option value="wide">宽</option></select></label>
+        <label class="field"><span>表音层</span><select id="pdfPhonetics"><option value="current">当前屏幕显示</option><option value="both">全部：文字 + 五度音高</option><option value="text">仅文字注音</option><option value="pitch">仅五度音高</option><option value="none">隐藏全部表音</option></select></label>
+        <label class="field"><span>页眉</span><select id="pdfHeaderMode"><option value="none">不显示</option><option value="title">文档标题</option><option value="custom">自定义文字</option></select></label>
+        <label class="field"><span>页脚</span><select id="pdfFooterMode"><option value="none">不显示</option><option value="page">页码</option><option value="page-total">页码 / 总页数</option></select></label>
+      </div>
+      <label id="pdfHeaderTextField" class="field hidden"><span>自定义页眉文字</span><input id="pdfHeaderText" autocomplete="off" /></label>
+      <label class="field checkline"><input id="pdfIncludeHighlights" type="checkbox" checked /><span>保留正文高亮颜色</span></label>
+      <div class="manual-note">预览会先生成临时 PDF，再交给 Windows 默认 PDF 查看器打开；正式导出仍使用矢量文字与 SVG。分页规则已加入孤行/寡行保护，并尽量避免标题、图片和表音对象被切断。</div>
+      <div class="dialog-actions"><button value="cancel">取消</button><button id="pdfApplyOnlyBtn" type="button">保存设置</button><button id="pdfPreviewNowBtn" type="button">预览</button><button id="pdfExportNowBtn" type="button" class="primary">导出 PDF…</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="closeTabDialog">
+    <form method="dialog">
+      <h2>保存更改？</h2>
+      <p id="closeTabMessage">当前文档有尚未保存的更改。</p>
+      <div class="dialog-actions"><button value="cancel">取消</button><button value="discard" class="danger">不保存</button><button value="save" class="primary">保存</button></div>
+    </form>
+  </dialog>
+
+  <script src="phonetics-core.js"></script>
+  <script src="confirmation-core.js"></script>
+  <script src="identity-core.js"></script>
+  <script src="japanese-pitch-core.js"></script>
+  <script src="font-core.js"></script>
+  <script src="learning-db-core.js"></script>
+  <script src="retrieval-core.js"></script>
+  <script src="memory-core.js"></script>
+  <script src="learning-db.js"></script>
+  <script src="archive-core.js"></script>
+  <script src="i18n.js"></script>
+  <script src="renderer.js"></script>
+  <div id="fileDropOverlay" class="file-drop-overlay hidden" aria-hidden="true"><div class="file-drop-card"><div class="file-drop-icon">⌑</div><strong id="fileDropText">Drop .phonodoc to open</strong><span>.phonodoc</span></div></div>
+</body>
+</html>
